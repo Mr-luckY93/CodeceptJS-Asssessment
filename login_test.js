@@ -1,10 +1,13 @@
 Feature("login");
 
+let email = "";
+let password = "";
+
 Scenario("Log to etalente", ({ I }) => {
   I.amOnPage("https://etalente.co.za/");
   I.see("Account");
-  I.fillField("#mat-input-0", "alric9382@gmail.com");
-  I.fillField("#mat-input-1", "Mathilde07");
+  I.fillField("#mat-input-0", email);
+  I.fillField("#mat-input-1", password);
   I.click("Login");
   I.see("Jasper");
 });
@@ -12,8 +15,8 @@ Scenario("Log to etalente", ({ I }) => {
 Scenario("Fail to Log to etalente", ({ I }) => {
   I.amOnPage("https://etalente.co.za/");
   I.see("Account");
-  I.fillField("username", "alric9382@gmail.com");
-  I.fillField("password", "Mathilde07");
+  I.fillField("username", password);
+  I.fillField("password", password);
   I.click("Login");
   I.see("Jasper");
 });
